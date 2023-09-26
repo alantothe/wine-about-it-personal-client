@@ -11,6 +11,10 @@ import {
   MenuList,
   MenuItem,
   IconButton,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
 } from "@material-tailwind/react";
 
 import {
@@ -23,6 +27,39 @@ import {
   ShoppingCartIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+
+//search bar
+
+export function DialogDefault({ open, toggleDialog }) {
+  return (
+    <>
+      <Dialog open={open} size={"xxl"} handler={toggleDialog}>
+        <DialogHeader className="px-5 py-5 flex justify-between">
+          <input
+            name="message"
+            className={`w-full rounded bg-black h-12  pr-12 placeholder-zinc-700 text-white  pl-12 outline-none`}
+            placeholder="Search ..."
+            autoComplete="off"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="h-6 w-6 cursor-pointer text-red-500 align-middle"
+            onClick={toggleDialog}
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </DialogHeader>
+        <DialogBody></DialogBody>
+      </Dialog>
+    </>
+  );
+}
 
 //dropdown menu
 function AccountMenu({ user, handleLogOut }) {
@@ -145,6 +182,10 @@ function NavList({ user, handleLogOut }) {
 export default function Nav({ user, handleLogOut }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+  //search
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const toggleDialog = () => setDialogOpen((prev) => !prev);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -173,7 +214,7 @@ export default function Nav({ user, handleLogOut }) {
         {/* ==================== */}
         <div className="flex" style={{ color: "rgb(96, 20, 30)" }}>
           <Typography
-            onClick={() => navigate("/development")}
+            onClick={() => toggleDialog()}
             className="flex items-center w-1/6"
           >
             {createElement(MagnifyingGlassIcon, {
@@ -211,6 +252,7 @@ export default function Nav({ user, handleLogOut }) {
         <Collapse open={isNavOpen} className="overflow-scroll">
           <NavList user={user} handleLogOut={handleLogOut} />
         </Collapse>
+        <DialogDefault open={dialogOpen} toggleDialog={toggleDialog} />
       </Navbar>
 
       <div
