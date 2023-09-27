@@ -37,7 +37,7 @@ export function DialogDefault({ open, toggleDialog }) {
         <DialogHeader className="px-5 py-5 flex justify-between">
           <input
             name="message"
-            className={`w-full rounded bg-black h-12  pr-12 placeholder-zinc-700 text-white  pl-12 outline-none`}
+            className={`w-full rounded bg-white h-12  pr-12 placeholder-zinc-700 text-wine  pl-12 outline-none`}
             placeholder="Search ..."
             autoComplete="off"
           />
