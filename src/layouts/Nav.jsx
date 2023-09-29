@@ -83,7 +83,7 @@ export function DialogDefault({ open, toggleDialog }) {
         </DialogHeader>
         <DialogBody className="overflow-scroll  flex flex-wrap justify-evenly gap-y-8">
           {results.map((wine) => (
-            <WineDetail wine={wine} />
+            <WineDetail handleClose={handleClose} wine={wine} />
           ))}
         </DialogBody>
       </Dialog>

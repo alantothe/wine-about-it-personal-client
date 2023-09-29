@@ -34,7 +34,7 @@ export default function WineDetail({ user }) {
     } else {
       setHeartToggle(false);
     }
-  }, []);
+  }, [id]);
 
   async function fetchWine() {
     const oneWine = await getWine(id);

@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@material-tailwind/react";
 
-export default function WineDetail({ wine }) {
+export default function WineDetail({ wine, handleClose }) {
   const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/search/wine-detail/${wine._id}`);
+    handleClose();
+  };
   return (
     <div
       className="flex flex-col text-center gap-y-2.5 mt-5 bg-white w-80"
-      onClick={() => navigate(`/search/wine-detail/${wine._id}`)}
+      onClick={() => handleClick()}
     >
       <img
         className="object-contain mt-5"
