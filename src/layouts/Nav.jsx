@@ -2,6 +2,7 @@ import { useState, useEffect, createElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchResults } from "../api/search";
 import SmallWineDetail from "../components/SmallWineDetail";
+import WineDetail from "../components/WineDetail";
 
 import {
   Navbar,
@@ -16,7 +17,6 @@ import {
   Dialog,
   DialogHeader,
   DialogBody,
-  DialogFooter,
 } from "@material-tailwind/react";
 
 import {
@@ -81,9 +81,9 @@ export function DialogDefault({ open, toggleDialog }) {
             />
           </svg>
         </DialogHeader>
-        <DialogBody className="overflow-scroll">
+        <DialogBody className="overflow-scroll  flex flex-wrap justify-evenly gap-y-8">
           {results.map((wine) => (
-            <SmallWineDetail wine={wine} />
+            <WineDetail wine={wine} />
           ))}
         </DialogBody>
       </Dialog>
