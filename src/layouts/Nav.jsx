@@ -1,5 +1,7 @@
 import { useState, useEffect, createElement } from "react";
 import { useNavigate } from "react-router-dom";
+import { fetchResults } from "../api/search";
+import SmallWineDetail from "../components/SmallWineDetail";
 
 import {
   Navbar,
@@ -29,17 +31,36 @@ import {
 } from "@heroicons/react/24/outline";
 
 //search bar
-
 export function DialogDefault({ open, toggleDialog }) {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    if (query.length > 0) {
+      const getResults = async () => {
+        try {
+          const data = await fetchResults(query);
+          setResults(data);
+          console.log(data);
+        } catch (error) {
+          console.error("Error fetching search results:", error);
+        }
+      };
+      getResults();
+    } else {
+      setResults([]);
+    }
+  }, [query]);
   return (
     <>
       <Dialog open={open} size={"xxl"} handler={toggleDialog}>
         <DialogHeader className="px-5 py-5 flex justify-between">
           <input
-            name="message"
+            name="query"
             className={`w-full rounded bg-white h-12  pr-12 placeholder-zinc-700 text-wine  pl-12 outline-none`}
             placeholder="Search ..."
             autoComplete="off"
+            onChange={(e) => setQuery(e.target.value)}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +76,11 @@ export function DialogDefault({ open, toggleDialog }) {
             />
           </svg>
         </DialogHeader>
-        <DialogBody></DialogBody>
+        <DialogBody className="overflow-scroll">
+          {results.map((wine) => (
+            <SmallWineDetail wine={wine} />
+          ))}
+        </DialogBody>
       </Dialog>
     </>
   );
