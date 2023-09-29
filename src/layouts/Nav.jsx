@@ -51,6 +51,11 @@ export function DialogDefault({ open, toggleDialog }) {
       setResults([]);
     }
   }, [query]);
+
+  const handleClose = () => {
+    setResults([]);
+    toggleDialog();
+  };
   return (
     <>
       <Dialog open={open} size={"xxl"} handler={toggleDialog}>
@@ -67,7 +72,7 @@ export function DialogDefault({ open, toggleDialog }) {
             viewBox="0 0 24 24"
             fill="currentColor"
             className="h-6 w-6 cursor-pointer text-red-500 align-middle"
-            onClick={toggleDialog}
+            onClick={handleClose}
           >
             <path
               fillRule="evenodd"
