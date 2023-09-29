@@ -58,7 +58,12 @@ export function DialogDefault({ open, toggleDialog }) {
   };
   return (
     <>
-      <Dialog open={open} size={"xxl"} handler={toggleDialog}>
+      <Dialog
+        className="bg-gray-100"
+        open={open}
+        size={"xxl"}
+        handler={toggleDialog}
+      >
         <DialogHeader className="px-5 py-5 flex justify-between">
           <input
             name="query"
