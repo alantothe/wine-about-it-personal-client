@@ -7,6 +7,9 @@ module.exports = withMT({
       colors: {
         wine: "#60141E",
       },
+      fontSize: {
+        xxs: "0.5rem",
+      },
     },
   },
   plugins: [],
