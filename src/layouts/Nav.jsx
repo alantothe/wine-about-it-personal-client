@@ -1,7 +1,7 @@
 import { useState, useEffect, createElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchResults } from "../api/search";
-import SmallWineDetail from "../components/SmallWineDetail";
+import { useSelector } from "react-redux";
 import WineDetail from "../components/WineDetail";
 
 import {
@@ -17,6 +17,7 @@ import {
   Dialog,
   DialogHeader,
   DialogBody,
+  Badge,
 } from "@material-tailwind/react";
 
 import {
@@ -34,6 +35,7 @@ import {
 export function DialogDefault({ open, toggleDialog }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
 
   useEffect(() => {
     if (query.length > 0) {
@@ -177,6 +179,7 @@ function AccountMenu({ user, handleLogOut }) {
 
 // Creates favorites and shopping cart icons
 function NavList({ user, handleLogOut }) {
+  const cartQuantity = useSelector((state) => state.cart.cartQuantity )
   return (
     <div className="flex flex-row items-center justify-between">
       <Typography
@@ -192,21 +195,37 @@ function NavList({ user, handleLogOut }) {
           {createElement(HeartIcon, { className: "h-6 w-6" })}
         </MenuItem>
       </Typography>
-
+      
       <Typography
         as="a"
         href="/shopping-cart"
         variant="small"
         className="font-normal"
       >
-        <MenuItem
-          className="flex items-center gap-2 rounded-full"
-          style={{ color: "rgb(96, 20, 30)" }}
-        >
+
+          {cartQuantity > 0 ? 
+                          <MenuItem
+                          className="flex items-center gap-2 rounded-full"
+                          style={{ color: "rgb(96, 20, 30)" }}
+                        >
+          <Badge placement="top-end" content={cartQuantity} className="h-4 w-4 p-0 m-0" >
           {createElement(ShoppingCartIcon, {
             className: "h-6 w-6",
           })}
+          
+          </Badge> 
+          </MenuItem>: 
+                  <MenuItem
+                  className="flex items-center gap-2 rounded-full"
+                  style={{ color: "rgb(96, 20, 30)" }}
+                >
+          {createElement(ShoppingCartIcon, {
+            className: "h-6 w-6",
+          })}
+        
+
         </MenuItem>
+        }
       </Typography>
       <AccountMenu user={user} handleLogOut={handleLogOut} />
     </div>
