@@ -5,8 +5,11 @@ export default function WineDetail({ wine, handleClose }) {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/search/wine-detail/${wine._id}`);
-    handleClose();
+    if (typeof handleClose === "function") {
+      handleClose();
+    }
   };
+
   return (
     <div
       className="flex flex-col text-center gap-y-2.5 mt-5 bg-white w-80"
