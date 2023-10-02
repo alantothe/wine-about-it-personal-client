@@ -45,14 +45,14 @@ export default function RegistrationPage(props) {
   return (
     <div
       className="flex justify-center items-center bg-gray-100"
-      style={{ color: "rgb(96, 20, 30)" }}
+      style={{ color: "rgb(159, 0, 63)" }}
     >
       <div className="bg-white p-8 shadow-md w-96">
         <h2
           className="text-4xl font-black pb-5 text-center"
           style={{
             fontFamily: "'HelpUsGiambattista', sans-serif",
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
           }}
         >
           Registration

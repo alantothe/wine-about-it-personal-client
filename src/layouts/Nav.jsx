@@ -108,11 +108,11 @@ function AccountMenu({ user, handleLogOut }) {
         <Button
           variant="text"
           className="flex items-center gap-1 rounded-full"
-          style={{ color: "rgb(96, 20, 30)" }}
+          style={{ color: "rgb(159, 0, 63)" }}
         >
           {createElement(UserCircleIcon, {
             className: "h-[24px] w-[24px]",
-            style: { color: user ? "green" : "rgb(96, 20, 30)" },
+            style: { color: user ? "green" : "rgb(159, 0, 63)" },
           })}
 
           <ChevronDownIcon
@@ -120,7 +120,7 @@ function AccountMenu({ user, handleLogOut }) {
             className={`h-3 w-3 transition-transform ${
               isMenuOpen ? "rotate-180" : ""
             }`}
-            style={{ color: user ? "green" : "rgb(96, 20, 30)" }}
+            style={{ color: user ? "green" : "rgb(159, 0, 63)" }}
           />
         </Button>
       </MenuHandler>
@@ -130,7 +130,7 @@ function AccountMenu({ user, handleLogOut }) {
           <MenuItem
             onClick={closeMenu}
             className={"flex items-center gap-2 rounded"}
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(UserCircleIcon, {
               className: "h-4 w-4",
@@ -144,7 +144,7 @@ function AccountMenu({ user, handleLogOut }) {
           <MenuItem
             onClick={closeMenu}
             className={"flex items-center gap-2 rounded"}
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(Cog6ToothIcon, {
               className: "h-4 w-4",
@@ -162,7 +162,7 @@ function AccountMenu({ user, handleLogOut }) {
           <MenuItem
             onClick={closeMenu}
             className={"flex items-center gap-2 rounded"}
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(PowerIcon, {
               className: "h-4 w-4",
@@ -189,7 +189,7 @@ function NavList({ user, handleLogOut }) {
       >
         <MenuItem
           className="flex items-center gap-2 rounded-full"
-          style={{ color: "rgb(96, 20, 30)" }}
+          style={{ color: "rgb(159, 0, 63)" }}
         >
           {createElement(HeartIcon, { className: "h-6 w-6" })}
         </MenuItem>
@@ -204,7 +204,7 @@ function NavList({ user, handleLogOut }) {
         {cartQuantity > 0 ? (
           <MenuItem
             className="flex items-center gap-2 rounded-full"
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             <Badge
               placement="top-end"
@@ -219,7 +219,7 @@ function NavList({ user, handleLogOut }) {
         ) : (
           <MenuItem
             className="flex items-center gap-2 rounded-full"
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(ShoppingCartIcon, {
               className: "h-6 w-6",
@@ -266,7 +266,7 @@ export default function Nav({ user, handleLogOut }) {
     <div className="bg-white">
       <Navbar className="max-w-full rounded-none">
         {/* ==================== */}
-        <div className="flex" style={{ color: "rgb(96, 20, 30)" }}>
+        <div className="flex" style={{ color: "rgb(159, 0, 63)" }}>
           <Typography
             onClick={() => toggleDialog()}
             className="flex items-center w-1/6"
@@ -295,7 +295,7 @@ export default function Nav({ user, handleLogOut }) {
             variant="text"
             onClick={toggleIsNavOpen}
             className="ml-auto mr-2 lg:hidden my-auto"
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             <Bars2Icon className="h-6 w-6" />
           </IconButton>
@@ -310,14 +310,14 @@ export default function Nav({ user, handleLogOut }) {
 
       <div
         className="flex justify-center border-b border-t"
-        style={{ borderColor: "rgb(96, 20, 30)" }}
+        style={{ borderColor: "rgb(159, 0, 63)" }}
       >
         <Button
           id="all"
           variant="text"
           onClick={handleProductTypeFilter}
           style={{
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}
         >
@@ -329,7 +329,7 @@ export default function Nav({ user, handleLogOut }) {
           variant="text"
           onClick={handleProductTypeFilter}
           style={{
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}
         >
@@ -341,7 +341,7 @@ export default function Nav({ user, handleLogOut }) {
           variant="text"
           onClick={handleProductTypeFilter}
           style={{
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}
         >
@@ -353,7 +353,7 @@ export default function Nav({ user, handleLogOut }) {
           variant="text"
           onClick={handleProductTypeFilter}
           style={{
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}
         >

@@ -7,8 +7,8 @@ export default function WineDetailShopping({ itemInfo }) {
       <div
         className="w-screen flex items-center p-5 bg-gray-100"
         style={{
-          borderTop: "1px solid rgb(96, 20, 30)",
-          borderBottom: "1px solid rgb(96, 20, 30)",
+          borderTop: "1px solid rgb(159, 0, 63)",
+          borderBottom: "1px solid rgb(159, 0, 63)",
           marginTop: "-1px",
         }}
       >
@@ -22,12 +22,12 @@ export default function WineDetailShopping({ itemInfo }) {
             <h3
               onClick={() => navigate(`/search/wine-detail/${itemInfo._id}`)}
               className="text-2xl font-semibold cursor-pointer hover:underline"
-              style={{ color: "rgb(96, 20, 30)" }}
+              style={{ color: "rgb(159, 0, 63)" }}
             >
               {itemInfo.WineName}
             </h3>
-            <p style={{ color: "rgb(96, 20, 30)" }}>${itemInfo.Price} each</p>
-            <p style={{ color: "rgb(96, 20, 30)" }}>
+            <p style={{ color: "rgb(159, 0, 63)" }}>${itemInfo.Price} each</p>
+            <p style={{ color: "rgb(159, 0, 63)" }}>
               Quantity: {itemInfo.quantity}
             </p>
             <p className="text-green-500 font-semibold">

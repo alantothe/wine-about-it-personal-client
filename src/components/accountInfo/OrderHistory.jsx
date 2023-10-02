@@ -27,7 +27,7 @@ export default function OrderHistory({ user }) {
             <div className=" py-4 text-gray-600">
               {orders.map((order, index) => (
                 <div key={index}>
-                  <h1 style={{ color: "rgb(96, 20, 30)" }}>
+                  <h1 style={{ color: "rgb(159, 0, 63)" }}>
                     Order ID: {order._id} <br />
                     Cart Quantity: {order.cartQuantity} <br />
                     Total: ${order.total} <br />
@@ -50,7 +50,7 @@ export default function OrderHistory({ user }) {
           </div>
           <CardBody className="overflow-scroll">
             <div className=" py-4 text-gray-600">
-              <h1 className=" text-center" style={{ color: "rgb(96, 20, 30)" }}>
+              <h1 className=" text-center" style={{ color: "rgb(159, 0, 63)" }}>
                 No Orders
               </h1>
             </div>

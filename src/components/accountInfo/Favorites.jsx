@@ -42,7 +42,7 @@ export default function Favorites({ user }) {
                   <img className="h-20 w-20 object-contain" src={wine.img} />
                   <p
                     onClick={() => navigate(`/search/wine-detail/${wine._id}`)}
-                    style={{ color: "rgb(96, 20, 30)" }}
+                    style={{ color: "rgb(159, 0, 63)" }}
                     className="cursor-pointer hover:underline"
                   >
                     {wine.WineName}

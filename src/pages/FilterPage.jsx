@@ -64,7 +64,7 @@ export default function FilterPage() {
         className="text-4xl font-black pl-14 pt-10"
         style={{
           fontFamily: "'HelpUsGiambattista', sans-serif",
-          color: "rgb(96, 20, 30)",
+          color: "rgb(159, 0, 63)",
         }}
       >
         {(productType === "red" && `Red Wines (${wine.length})`) ||
@@ -82,7 +82,7 @@ export default function FilterPage() {
             className="rounded-none"
             onClick={handleAToZ}
             style={{
-              backgroundColor: "rgb(96, 20, 30)",
+              backgroundColor: "rgb(159, 0, 63)",
               fontFamily: "'HelpUsGiambattista', sans-serif",
             }}
           >
@@ -93,7 +93,7 @@ export default function FilterPage() {
             className="rounded-none"
             onClick={handleLeastToMost}
             style={{
-              backgroundColor: "rgb(96, 20, 30)",
+              backgroundColor: "rgb(159, 0, 63)",
               fontFamily: "'HelpUsGiambattista', sans-serif",
             }}
           >
@@ -104,7 +104,7 @@ export default function FilterPage() {
             className="rounded-none"
             onClick={handleMostToLeast}
             style={{
-              backgroundColor: "rgb(96, 20, 30)",
+              backgroundColor: "rgb(159, 0, 63)",
               fontFamily: "'HelpUsGiambattista', sans-serif",
             }}
           >

@@ -34,8 +34,8 @@ export default function Favorites({ user }) {
           className="flex items-center text-4xl font-black py-5 pl-10"
           style={{
             fontFamily: "'HelpUsGiambattista', sans-serif",
-            color: "rgb(96, 20, 30)",
-            borderBottom: "1px solid rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
+            borderBottom: "1px solid rgb(159, 0, 63)",
           }}
         >
           Favorites ({wines.length})

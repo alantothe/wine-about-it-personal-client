@@ -57,7 +57,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
         <div className="flex justify-center mx-auto">
           <form
             className="flex flex-col justify-center items-center w-80 gap-2"
-            style={{ color: "rgb(96, 20, 30)" }}
+            style={{ color: "rgb(159, 0, 63)" }}
             onSubmit={handleSubmit}
           >
             <Typography
@@ -68,7 +68,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
                 style={{
-                  border: "1px solid rgb(96, 20, 30)",
+                  border: "1px solid rgb(159, 0, 63)",
                 }}
                 type="text"
                 name="firstName"
@@ -85,7 +85,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
                 style={{
-                  border: "1px solid rgb(96, 20, 30)",
+                  border: "1px solid rgb(159, 0, 63)",
                 }}
                 type="text"
                 name="lastName"
@@ -101,7 +101,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <br />
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
-                style={{ border: "1px solid rgb(96, 20, 30)" }}
+                style={{ border: "1px solid rgb(159, 0, 63)" }}
                 type="text"
                 name="streetAddress"
                 value={formData.streetAddress}
@@ -116,7 +116,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <br />
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
-                style={{ border: "1px solid rgb(96, 20, 30)" }}
+                style={{ border: "1px solid rgb(159, 0, 63)" }}
                 type="text"
                 name="addressLine2"
                 value={formData.addressLine2}
@@ -132,7 +132,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
                 <br />
                 <input
                   className="w-36 bg-gray-100 px-2 outline-none"
-                  style={{ border: "1px solid rgb(96, 20, 30)" }}
+                  style={{ border: "1px solid rgb(159, 0, 63)" }}
                   type="text"
                   name="city"
                   value={formData.city}
@@ -147,7 +147,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
                 <br />
                 <input
                   className="w-36 bg-gray-100 px-2 outline-none"
-                  style={{ border: "1px solid rgb(96, 20, 30)" }}
+                  style={{ border: "1px solid rgb(159, 0, 63)" }}
                   type="text"
                   name="state"
                   value={formData.state}
@@ -163,7 +163,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <br />
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
-                style={{ border: "1px solid rgb(96, 20, 30)" }}
+                style={{ border: "1px solid rgb(159, 0, 63)" }}
                 type="text"
                 name="postalCode"
                 value={formData.postalCode}
@@ -178,7 +178,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
               <br />
               <input
                 className="w-80 bg-gray-100 px-2 outline-none"
-                style={{ border: "1px solid rgb(96, 20, 30)" }}
+                style={{ border: "1px solid rgb(159, 0, 63)" }}
                 type="text"
                 name="creditCardNumber"
                 value={formData.creditCardNumber}
@@ -194,7 +194,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
                 <br />
                 <input
                   className="w-36 bg-gray-100 px-2 outline-none"
-                  style={{ border: "1px solid rgb(96, 20, 30)" }}
+                  style={{ border: "1px solid rgb(159, 0, 63)" }}
                   type="text"
                   name="expiration"
                   value={formData.expiration}
@@ -209,7 +209,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
                 <br />
                 <input
                   className="w-36 bg-gray-100 px-2 outline-none"
-                  style={{ border: "1px solid rgb(96, 20, 30)" }}
+                  style={{ border: "1px solid rgb(159, 0, 63)" }}
                   type="text"
                   name="cVC"
                   value={formData.cVC}
@@ -220,7 +220,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
 
             <button
               className="w-20 mt-5"
-              style={{ border: "1px solid rgb(96, 20, 30)" }}
+              style={{ border: "1px solid rgb(159, 0, 63)" }}
             >
               Submit
             </button>
@@ -235,7 +235,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
             className="text-4xl"
             style={{
               fontFamily: "'HelpUsGiambattista', sans-serif",
-              color: "rgb(96, 20, 30)",
+              color: "rgb(159, 0, 63)",
             }}
           >
             Thank you for your order!
@@ -249,7 +249,7 @@ export default function Checkout({ cartQuantity, cartTotal, itemsInfo, user }) {
             className="w-40 flex justify-center mx-auto rounded-none"
             style={{
               fontFamily: "'HelpUsGiambattista', sans-serif",
-              color: "rgb(96, 20, 30)",
+              color: "rgb(159, 0, 63)",
             }}
           >
             Home

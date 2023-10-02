@@ -24,7 +24,7 @@ export default function WineDetailFavorite({ wine, user }) {
           variant="outlined"
           className="h-8 w-8 p-1 rounded-none absolute z-50 outline-none"
           style={{
-            color: "rgb(96, 20, 30)",
+            color: "rgb(159, 0, 63)",
             border: "none",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}

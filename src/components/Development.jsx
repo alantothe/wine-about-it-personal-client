@@ -5,7 +5,7 @@ export default function Development() {
       style={{
         height: "58vh",
         fontFamily: "HelpUsGiambattista",
-        color: "rgb(96, 20, 30)",
+        color: "rgb(159, 0, 63)",
       }}
     >
       This feature is currently under development.

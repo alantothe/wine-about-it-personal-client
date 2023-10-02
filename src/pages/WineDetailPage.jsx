@@ -87,7 +87,7 @@ export default function WineDetail({ user }) {
     <div
       className="flex flex-row"
       style={{
-        color: "rgb(96, 20, 30)",
+        color: "rgb(159, 0, 63)",
       }}
     >
       <div
@@ -145,7 +145,7 @@ export default function WineDetail({ user }) {
             <PopoverContent>
               <Typography
                 style={{
-                  color: "rgb(96, 20, 30)",
+                  color: "rgb(159, 0, 63)",
                   fontFamily: "'HelpUsGiambattista', sans-serif",
                 }}
               >
@@ -156,7 +156,7 @@ export default function WineDetail({ user }) {
             <PopoverContent>
               <Typography
                 style={{
-                  color: "rgb(96, 20, 30)",
+                  color: "rgb(159, 0, 63)",
                   fontFamily: "'HelpUsGiambattista', sans-serif",
                 }}
               >
@@ -211,7 +211,7 @@ export default function WineDetail({ user }) {
           <PopoverContent>
             <Typography
               style={{
-                color: "rgb(96, 20, 30)",
+                color: "rgb(159, 0, 63)",
                 fontFamily: "'HelpUsGiambattista', sans-serif",
               }}
             >

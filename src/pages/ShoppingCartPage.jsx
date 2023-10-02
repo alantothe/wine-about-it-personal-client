@@ -55,8 +55,8 @@ export default function ShoppingCart({ user }) {
             className="text-4xl py-5 pl-10 font-black"
             style={{
               fontFamily: "'HelpUsGiambattista', sans-serif",
-              color: "rgb(96, 20, 30)",
-              borderBottom: "1px solid rgb(96, 20, 30)",
+              color: "rgb(159, 0, 63)",
+              borderBottom: "1px solid rgb(159, 0, 63)",
             }}
           >
             Shopping Cart
@@ -70,7 +70,7 @@ export default function ShoppingCart({ user }) {
             <div className="flex grow"></div>
             <div
               className="flex flex-col p-5"
-              style={{ color: "rgb(96, 20, 30)" }}
+              style={{ color: "rgb(159, 0, 63)" }}
             >
               {items.length === 0 ? (
                 <div style={{ height: "23vh" }}></div>
