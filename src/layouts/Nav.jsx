@@ -111,13 +111,13 @@ function AccountMenu({ user, handleLogOut }) {
           style={{ color: "rgb(159, 0, 63)" }}
         >
           {createElement(UserCircleIcon, {
-            className: "h-[24px] w-[24px]",
+            className: "h-7 w-7",
             style: { color: user ? "green" : "rgb(159, 0, 63)" },
           })}
 
           <ChevronDownIcon
             strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
+            className={`h-4 w-4 transition-transform ${
               isMenuOpen ? "rotate-180" : ""
             }`}
             style={{ color: user ? "green" : "rgb(159, 0, 63)" }}
@@ -191,7 +191,7 @@ function NavList({ user, handleLogOut }) {
           className="flex items-center gap-2 rounded-full"
           style={{ color: "rgb(159, 0, 63)" }}
         >
-          {createElement(HeartIcon, { className: "h-6 w-6" })}
+          {createElement(HeartIcon, { className: "h-7 w-7" })}
         </MenuItem>
       </Typography>
 
@@ -212,7 +212,7 @@ function NavList({ user, handleLogOut }) {
               className="min-w-[18px] min-h-[18px] p-0 m-0 text-xxs text-white"
             >
               {createElement(ShoppingCartIcon, {
-                className: "h-6 w-6",
+                className: "h-7 w-7",
               })}
             </Badge>
           </MenuItem>
@@ -222,7 +222,7 @@ function NavList({ user, handleLogOut }) {
             style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(ShoppingCartIcon, {
-              className: "h-6 w-6",
+              className: "h-7 w-7",
             })}
           </MenuItem>
         )}
@@ -264,7 +264,7 @@ export default function Nav({ user, handleLogOut }) {
 
   return (
     <div className="bg-white">
-      <Navbar className="max-w-full rounded-none">
+      <Navbar className="max-w-full rounded-none py-0">
         {/* ==================== */}
         <div className="flex" style={{ color: "rgb(159, 0, 63)" }}>
           <Typography
@@ -272,7 +272,7 @@ export default function Nav({ user, handleLogOut }) {
             className="flex items-center w-1/6"
           >
             {createElement(MagnifyingGlassIcon, {
-              className: "h-6 w-6",
+              className: "h-7 w-7",
               strokeWidth: 2,
             })}
           </Typography>
@@ -285,9 +285,8 @@ export default function Nav({ user, handleLogOut }) {
           />
 
           {/* Favorites and shopping cart icons */}
-          <div className="flex justify-end w-1/6 top-2/4 hidden lg:block">
-            <NavList user={user} handleLogOut={handleLogOut} />
-          </div>
+
+          <NavList user={user} handleLogOut={handleLogOut} />
 
           {/* Responsive menu change (NavList > Bars2Icon) when Collapse is open (determined by useEffect above) */}
           <IconButton
@@ -297,7 +296,7 @@ export default function Nav({ user, handleLogOut }) {
             className="ml-auto mr-2 lg:hidden my-auto"
             style={{ color: "rgb(159, 0, 63)" }}
           >
-            <Bars2Icon className="h-6 w-6" />
+            <Bars2Icon className="h-7 w-7" />
           </IconButton>
         </div>
         {/* ==================== */}
