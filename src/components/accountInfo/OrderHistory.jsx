@@ -48,9 +48,6 @@ export default function OrderHistory({ user }) {
           <div className="bg-black text-white text-center py-6 font-bold text-3xl">
             Order History
           </div>
-          <CardBody className="flex flex-col">
-            No order history available.
-          </CardBody>
         </Card>
       )}
     </div>
