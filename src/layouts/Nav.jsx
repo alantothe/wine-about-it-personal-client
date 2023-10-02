@@ -277,13 +277,12 @@ export default function Nav({ user, handleLogOut }) {
             })}
           </Typography>
 
-          <Typography
+          <img
             onClick={() => navigate("/")}
-            className="mr-4 ml-2 flex items-center justify-center grow cursor-pointer py-1.5 font-black text-5xl"
+            className="mr-4 ml-2 flex items-center justify-center grow cursor-pointer py-1.5 h-32 w-60"
+            src="https://res.cloudinary.com/dzjr3skhe/image/upload/v1696266588/610740ed726dc75a8e9e3126_1_iliqrj.svg"
             style={{ fontFamily: "Wine Date" }}
-          >
-            Wine About It
-          </Typography>
+          />
 
           {/* Favorites and shopping cart icons */}
           <div className="flex justify-end w-1/6 top-2/4 hidden lg:block">

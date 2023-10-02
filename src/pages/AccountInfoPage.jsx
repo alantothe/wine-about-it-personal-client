@@ -4,7 +4,7 @@ import UserInfoCard from "../components/accountInfo/UserInfo";
 
 export default function AccountInfoPage({ user }) {
   return (
-    <div className="flex pb-5">
+    <div className="flex pb-5 " style={{ minHeight: "68vh" }}>
       <div className="w-1/3">
         <UserInfoCard user={user} />
       </div>
