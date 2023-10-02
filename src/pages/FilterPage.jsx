@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getRedWines, getWhiteWines, getRoseWines, getWines } from "../api/api";
 import { Button, ButtonGroup, Typography } from "@material-tailwind/react";
@@ -60,57 +60,57 @@ export default function FilterPage() {
 
   return (
     <div className="bg-gray-100 pb-10">
-      <Typography
-        className="text-4xl font-black pl-14 pt-10"
-        style={{
-          fontFamily: "'HelpUsGiambattista', sans-serif",
-          color: "rgb(159, 0, 63)",
-        }}
-      >
-        {(productType === "red" && `Red Wines (${wine.length})`) ||
-          (productType === "white" && `White Wines (${wine.length})`) ||
-          (productType === "rose" && `Rose Wines (${wine.length})`) ||
-          (productType === "all" && `All Wines (${wine.length})`)}
-      </Typography>
-
-      <div className="flex justify-evenly">
-        <div className="w-80"></div>
-        <div className="w-80"></div>
-        <div className="w-80"></div>
-        <ButtonGroup className="flex justify-end w-80">
-          <Button
-            className="rounded-none"
-            onClick={handleAToZ}
+      <div className="flex ">
+        <div className="flex justify-start" style={{ width: "50vw" }}>
+          <Typography
+            className="text-4xl font-black pl-14 flex pt-10"
             style={{
-              backgroundColor: "rgb(159, 0, 63)",
               fontFamily: "'HelpUsGiambattista', sans-serif",
+              color: "rgb(159, 0, 63)",
             }}
           >
-            A - Z
-          </Button>
+            {(productType === "red" && `Red Wines (${wine.length})`) ||
+              (productType === "white" && `White Wines (${wine.length})`) ||
+              (productType === "rose" && `Rose Wines (${wine.length})`) ||
+              (productType === "all" && `All Wines (${wine.length})`)}
+          </Typography>
+        </div>
+        <div className="flex justify-end pr-14 pt-10" style={{ width: "50vw" }}>
+          <ButtonGroup>
+            <Button
+              className="rounded-none"
+              onClick={handleAToZ}
+              style={{
+                backgroundColor: "rgb(159, 0, 63)",
+                fontFamily: "'HelpUsGiambattista', sans-serif",
+              }}
+            >
+              A - Z
+            </Button>
 
-          <Button
-            className="rounded-none"
-            onClick={handleLeastToMost}
-            style={{
-              backgroundColor: "rgb(159, 0, 63)",
-              fontFamily: "'HelpUsGiambattista', sans-serif",
-            }}
-          >
-            $ - $$$
-          </Button>
+            <Button
+              className="rounded-none"
+              onClick={handleLeastToMost}
+              style={{
+                backgroundColor: "rgb(159, 0, 63)",
+                fontFamily: "'HelpUsGiambattista', sans-serif",
+              }}
+            >
+              $ - $$$
+            </Button>
 
-          <Button
-            className="rounded-none"
-            onClick={handleMostToLeast}
-            style={{
-              backgroundColor: "rgb(159, 0, 63)",
-              fontFamily: "'HelpUsGiambattista', sans-serif",
-            }}
-          >
-            $$$ - $
-          </Button>
-        </ButtonGroup>
+            <Button
+              className="rounded-none"
+              onClick={handleMostToLeast}
+              style={{
+                backgroundColor: "rgb(159, 0, 63)",
+                fontFamily: "'HelpUsGiambattista', sans-serif",
+              }}
+            >
+              $$$ - $
+            </Button>
+          </ButtonGroup>
+        </div>
       </div>
 
       <div className="wine-container flex flex-wrap justify-evenly gap-y-8">
