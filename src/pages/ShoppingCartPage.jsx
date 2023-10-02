@@ -16,7 +16,7 @@ export default function ShoppingCart({ user }) {
 
   useEffect(() => {
     fetchWines();
-  }, [user]);
+  }, [user, cartQuantity]);
 
   const fetchWines = async () => {
     const cartItems = items.map((item) => item._id);
@@ -27,10 +27,12 @@ export default function ShoppingCart({ user }) {
     setTheFetchedWines(fetchedWines);
   };
 
-  const itemsInfo = theFetchedWines.map((wine) => {
-    const item = items.find((item) => item._id === wine._id);
-    return { ...wine, quantity: item.quantity };
-  });
+  const itemsInfo = theFetchedWines
+    .map((wine) => {
+      const item = items.find((item) => item._id === wine._id);
+      return item ? { ...wine, quantity: item.quantity } : null;
+    })
+    .filter((item) => item !== null);
 
   const handleCheckout = () => {
     if (user === null) {
