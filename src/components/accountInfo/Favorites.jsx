@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Card, CardBody, Typography, Button } from "@material-tailwind/react";
 import { getUser } from "../../api/users";
 import { getWine } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Favorites({ user }) {
+  const navigate = useNavigate();
   const [wines, setWines] = useState([]);
 
   const fetchWines = async () => {
@@ -38,7 +40,13 @@ export default function Favorites({ user }) {
               {wines.map((wine, index) => (
                 <div className="flex items-center mb-2" key={index}>
                   <img className="h-20 w-20 object-contain" src={wine.img} />
-                  <p style={{ color: "rgb(96, 20, 30)" }}>{wine.WineName}</p>
+                  <p
+                    onClick={() => navigate(`/search/wine-detail/${wine._id}`)}
+                    style={{ color: "rgb(96, 20, 30)" }}
+                    className="cursor-pointer hover:underline"
+                  >
+                    {wine.WineName}
+                  </p>
                 </div>
               ))}
             </div>
