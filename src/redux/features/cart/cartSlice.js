@@ -34,6 +34,11 @@ export const cartSlice = createSlice({
         state.cartTotal -= price;
       }
 
+      // if the quantity of the existing item is zero, remove it from the items array
+      if (existingItem.quantity === 0) {
+        state.items = state.items.filter((item) => item._id !== id);
+      }
+
       // update cartQuantity and Total
       state.cartQuantity -= 1;
     },
