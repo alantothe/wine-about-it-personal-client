@@ -48,7 +48,7 @@ export default function ShoppingCart({ user }) {
   };
 
   return (
-    <div>
+    <div style={{ minHeight: "70vh" }}>
       {!checkout ? (
         <div>
           <Typography
