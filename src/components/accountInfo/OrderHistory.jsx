@@ -44,10 +44,17 @@ export default function OrderHistory({ user }) {
           </CardBody>
         </Card>
       ) : (
-        <Card className="w-full">
+        <Card className="w-full bg-gray-100" style={{ height: "55vh" }}>
           <div className="bg-black text-white text-center py-6 font-bold text-3xl">
             Order History
           </div>
+          <CardBody className="overflow-scroll">
+            <div className=" py-4 text-gray-600">
+              <h1 className=" text-center" style={{ color: "rgb(96, 20, 30)" }}>
+                No Orders
+              </h1>
+            </div>
+          </CardBody>
         </Card>
       )}
     </div>
