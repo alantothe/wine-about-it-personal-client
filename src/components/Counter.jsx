@@ -1,21 +1,28 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { increment, decrement } from "../redux/features/cart/cartSlice.js";
 
-function Counter({ count }) {
+function Counter({ count, itemInfo }) {
+  const dispatch = useDispatch();
   const [value, setValue] = useState(count);
+  // console.log(itemInfo);
+  const { _id, Price } = itemInfo;
 
-  const decrement = () => {
+  const decrementCounter = () => {
     setValue((prevValue) => prevValue - 1);
+    dispatch(decrement({ id: _id, price: Price }));
   };
 
-  const increment = () => {
+  const incrementCounter = () => {
     setValue((prevValue) => prevValue + 1);
+    dispatch(increment({ id: _id, price: Price }));
   };
   return (
     <div className="custom-number-input h-10 w-32">
       <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
         <button
           data-action="decrement"
-          onClick={decrement}
+          onClick={decrementCounter}
           className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
         >
           <span className="m-auto text-2xl font-thin">−</span>
@@ -29,7 +36,7 @@ function Counter({ count }) {
         />
         <button
           data-action="increment"
-          onClick={increment}
+          onClick={incrementCounter}
           className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
         >
           <span className="m-auto text-2xl font-thin">+</span>

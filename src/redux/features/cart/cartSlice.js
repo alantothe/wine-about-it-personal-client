@@ -9,10 +9,32 @@ export const cartSlice = createSlice({
     cartTotal: 0,
   },
   reducers: {
-    increment: (state) => {
+    increment: (state, action) => {
+      const { id, price } = action.payload;
+
+      const existingItem = state.items.find((item) => item._id === id);
+
+      if (existingItem) {
+        // increment the quantity of the existing item
+        existingItem.quantity += 1;
+      }
+
+      // update cartQuantity & Total
       state.cartQuantity += 1;
+      state.cartTotal += price;
     },
-    decrement: (state) => {
+    decrement: (state, action) => {
+      const { id, price } = action.payload;
+
+      const existingItem = state.items.find((item) => item._id === id);
+
+      if (existingItem) {
+        // decrement the quantity of the existing item
+        existingItem.quantity -= 1;
+        state.cartTotal -= price;
+      }
+
+      // update cartQuantity and Total
       state.cartQuantity -= 1;
     },
     incrementByAmount: (state, action) => {
