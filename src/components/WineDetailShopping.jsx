@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import Counter from "./Counter";
 export default function WineDetailShopping({ itemInfo }) {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col">
       <div
@@ -16,7 +19,8 @@ export default function WineDetailShopping({ itemInfo }) {
         />
         <div className="flex flex-col justify-between">
           <h3
-            className="text-2xl font-semibold"
+            onClick={() => navigate(`/search/wine-detail/${itemInfo._id}`)}
+            className="text-2xl font-semibold cursor-pointer hover:underline"
             style={{ color: "rgb(96, 20, 30)" }}
           >
             {itemInfo.WineName}
@@ -29,6 +33,7 @@ export default function WineDetailShopping({ itemInfo }) {
             Item Total: ${Math.floor(itemInfo.Price * itemInfo.quantity)}
           </p>
         </div>
+        <Counter />
       </div>
     </div>
   );
