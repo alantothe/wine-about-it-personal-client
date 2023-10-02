@@ -36,7 +36,7 @@ export default function WineDetailShopping({ itemInfo }) {
           </div>
         </div>
         <div className="w-1/2 flex justify-end items-center mr-5">
-          <Counter />
+          <Counter count={itemInfo.quantity} />
         </div>
       </div>
     </div>
