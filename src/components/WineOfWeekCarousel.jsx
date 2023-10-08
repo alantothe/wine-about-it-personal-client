@@ -29,7 +29,7 @@ export default function RandomWinesCarousel() {
   }
 
   return (
-    <div className="min-h-100 overflow-hidden mt-6 bg-gray-100">
+    <div className="h-full overflow-hidden mt-6 bg-gray-100">
       <Carousel
         transition={{ duration: 3 }}
         className="rounded-xl"
@@ -38,19 +38,27 @@ export default function RandomWinesCarousel() {
         autoplayDelay={6000}
       >
         {chunkedWines.map((slideWines, slideIndex) => (
-          <div className="flex justify-between" key={slideIndex}>
+          <div className="flex justify-between " key={slideIndex}>
             {slideWines.map((wine, wineIndex) => (
-              <div className="w-1/4 px-4 py-4 text-center h-100" key={wineIndex}>
-                <Link to={`/search/wine-detail/${wine._id}`} className="block">
-                  <div className="w-full h-80 cursor-pointer mt-4 mb-2 pb-12 pt-2 px-4 bg-white">
+              <div
+                className="w-1/4 px-4 py-4 text-center h-1/2"
+                key={wineIndex}
+              >
+                <Link
+                  to={`/search/wine-detail/${wine._id}`}
+                  className="overflow-hidden"
+                >
+                  <div className=" items-center h-60 cursor-pointer mt-4 mb-2 pb-2 pt-2 px-4 bg-white overflow-scroll">
                     <img
                       src={wine.img}
                       alt={`Random Wine ${wineIndex + 1}`}
-                      className="mx-auto max-h-full max-w-full mt-0"
+                      className="items-center object-contain h-40 w-40"
                     />
-                    <p className="text-l overflow-hidden whitespace-normal">
-                      <span className="block h-16">{wine.WineName}</span>
-                    </p>
+                    <div className="flex justify-center">
+                      <h1 className="text-sm sm:text-sm md:text-md lg:text-lg font-bold">
+                        {wine.WineName}
+                      </h1>
+                    </div>
                   </div>
                 </Link>
               </div>
