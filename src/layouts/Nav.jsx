@@ -180,7 +180,7 @@ function AccountMenu({ user, handleLogOut }) {
 function NavList({ user, handleLogOut }) {
   const cartQuantity = useSelector((state) => state.cart.cartQuantity);
   return (
-    <div className="flex flex-row items-center justify-between">
+    <div className="flex items-center justify-between">
       <Typography
         as="a"
         href="/favorites"
@@ -286,7 +286,7 @@ export default function Nav({ user, handleLogOut }) {
 
           {/* Favorites and shopping cart icons */}
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center justify-center">
             <NavList user={user} handleLogOut={handleLogOut} />
           </div>
 
@@ -304,11 +304,7 @@ export default function Nav({ user, handleLogOut }) {
         {/* ==================== */}
 
         <Collapse open={isNavOpen} className="overflow-scroll">
-          <NavList
-            user={user}
-            handleLogOut={handleLogOut}
-            className="hidden lg:block"
-          />
+          <NavList user={user} handleLogOut={handleLogOut} />
         </Collapse>
         <DialogDefault open={dialogOpen} toggleDialog={toggleDialog} />
       </Navbar>
