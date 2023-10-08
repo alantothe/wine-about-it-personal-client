@@ -58,42 +58,38 @@ export function DialogDefault({ open, toggleDialog }) {
     toggleDialog();
   };
   return (
-    <>
-      <Dialog
-        className="bg-gray-100"
-        open={open}
-        size={"xxl"}
-        handler={toggleDialog}
-      >
-        <DialogHeader className="px-5 py-5 flex justify-between">
-          <input
-            name="query"
-            className={`w-full rounded bg-white h-12  pr-12 placeholder-zinc-700 text-wine  pl-12 outline-none`}
-            placeholder="Search ..."
-            autoComplete="off"
-            onChange={(e) => setQuery(e.target.value)}
+    <Dialog className="" open={open} size={"xxl"} handler={toggleDialog}>
+      <DialogHeader className=" px-5 py-5 flex justify-between ">
+        <input
+          name="query"
+          className={`w-full rounded bg-white h-12  pr-12 placeholder-zinc-700 text-wine  pl-12 outline-none`}
+          placeholder="Search ..."
+          autoComplete="off"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="h-6 w-6 cursor-pointer text-red-500 align-middle"
+          onClick={handleClose}
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+            clipRule="evenodd"
           />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-6 w-6 cursor-pointer text-red-500 align-middle"
-            onClick={handleClose}
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </DialogHeader>
-        <DialogBody className="overflow-scroll  flex flex-wrap justify-evenly gap-y-8">
-          {results.map((wine) => (
-            <WineDetail handleClose={handleClose} wine={wine} />
-          ))}
-        </DialogBody>
-      </Dialog>
-    </>
+        </svg>
+      </DialogHeader>
+      <DialogBody
+        divider
+        className="overflow-scroll w-full  flex flex-wrap justify-evenly gap-y-8"
+      >
+        {results.map((wine) => (
+          <WineDetail handleClose={handleClose} wine={wine} />
+        ))}
+      </DialogBody>
+    </Dialog>
   );
 }
 
