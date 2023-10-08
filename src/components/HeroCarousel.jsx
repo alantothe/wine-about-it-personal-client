@@ -48,13 +48,13 @@ export default function HeroCarousel() {
           <div className="ml-5">
             <Typography
               style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
-              className="mb-2 mt-2 text-4xl"
+              className="mb-2 mt-2 text-4xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-5xl "
             >
               We Have Over
             </Typography>
             <Typography
               style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
-              className="mt-1 py-4 mb-1 text-7xl"
+              className="mt-1 py-4 mb-1 text-7xl xs:text-sm sm:text-sm md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl"
             >
               200 Selections
             </Typography>
@@ -68,49 +68,40 @@ export default function HeroCarousel() {
         </figcaption>
       </figure>
 
-      <figure className="relative w-full">
+      <img
+        src="https://i.imgur.com/vKJ5d5K.jpg"
+        alt="Wine glasses"
+        className="w-screen object-cover"
+        style={{
+          height: "70vh",
+          fontFamily: "'HelpUsGiambattista', sans-serif",
+        }}
+      />
+
+      <figure className="relative w-full flex items-center justify-center">
         <img
-          src="https://i.imgur.com/x5aHcWZ.jpg"
-          alt="Grapes being harvested"
-          className="relative w-screen object-cover object-bottom"
+          src="https://i.imgur.com/R7Bvovn.jpg"
+          alt="Wine barrels"
+          className="w-screen object-cover"
           style={{
             height: "70vh",
             fontFamily: "'HelpUsGiambattista', sans-serif",
           }}
         />
-        {/* <figcaption
-          className={`flex-col mr-32 py-10 mb-40 absolute bottom-0 right-0 w-1/2 h-54 border border-white bg-white  px-4 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm transition-opacity duration-500 ${
+        <figcaption
+          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-28 border border-white bg-white py-2 px-4 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm transition-opacity duration-500 flex items-center justify-center ${
             fadeIn ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="ml-5">
-            <Typography
-              style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
-              className="mt-1 py-4 mb-1 text-7xl"
-            >
-              100+ Red Wines
-            </Typography>
-          </div>
-          <button
-            type="button"
-            class="ml-5 mt-6 w-1/3 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+          <Typography
+            style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
+            className="text-center text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-5xl mb-2 mt-2"
           >
-            View Products
-          </button>
-        </figcaption> */}
+            Free Shipping on Orders Over $100
+          </Typography>
+        </figcaption>
       </figure>
-      <img
-        src="https://i.imgur.com/vKJ5d5K.jpg"
-        alt="Cheers"
-        className="w-screen object-cover"
-        style={{ height: "70vh" }}
-      />
-      <img
-        src="https://i.imgur.com/R7Bvovn.jpg"
-        alt="Wine barrels"
-        className="w-screen object-cover"
-        style={{ height: "70vh" }}
-      />
+
       <img
         src="https://i.imgur.com/y06fvEP.jpg"
         alt="Vineyard"

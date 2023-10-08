@@ -286,7 +286,9 @@ export default function Nav({ user, handleLogOut }) {
 
           {/* Favorites and shopping cart icons */}
 
-          <NavList user={user} handleLogOut={handleLogOut} />
+          <div className="hidden lg:block">
+            <NavList user={user} handleLogOut={handleLogOut} />
+          </div>
 
           {/* Responsive menu change (NavList > Bars2Icon) when Collapse is open (determined by useEffect above) */}
           <IconButton
@@ -302,7 +304,11 @@ export default function Nav({ user, handleLogOut }) {
         {/* ==================== */}
 
         <Collapse open={isNavOpen} className="overflow-scroll">
-          <NavList user={user} handleLogOut={handleLogOut} />
+          <NavList
+            user={user}
+            handleLogOut={handleLogOut}
+            className="hidden lg:block"
+          />
         </Collapse>
         <DialogDefault open={dialogOpen} toggleDialog={toggleDialog} />
       </Navbar>
