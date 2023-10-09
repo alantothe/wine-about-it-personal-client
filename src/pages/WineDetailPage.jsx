@@ -85,7 +85,7 @@ export default function WineDetail({ user }) {
 
   return (
     <div
-      className="flex flex-row"
+      className="flex flex-row overflow-scroll"
       style={{
         color: "rgb(159, 0, 63)",
       }}
@@ -103,18 +103,19 @@ export default function WineDetail({ user }) {
       </div>
 
       <div
-        className="flex flex-col w-2/4 justify-evenly py-5 pr-5"
-        style={{ height: "80vh" }}
+        className="flex flex-col w-2/4 justify-evenly "
+        style={{ height: "100vh" }}
       >
         <Typography
           variant="h3"
+          className="text-lg sm:text-4xl font-black"
           style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
         >
           {wine.WineName}
         </Typography>
 
         <Typography>
-          <img src={wine.flag} alt="Flag" className="" />
+          <img src={wine.flag} alt="Flag" className=" w-6 sm:w-16" />
         </Typography>
 
         <Typography style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}>
@@ -170,7 +171,7 @@ export default function WineDetail({ user }) {
           ${wine.Price}
         </Typography>
 
-        <div className="w-2/5 flex justify-between">
+        <div className="w-1/2 flex justify-between">
           <Button
             onClick={handleMinus}
             variant="outlined"
@@ -201,7 +202,7 @@ export default function WineDetail({ user }) {
             <div className="flex items-center">
               <Button
                 variant="outlined"
-                className="rounded-none w-2/5"
+                className="rounded-none w-1/2"
                 style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
               >
                 Add to Cart
@@ -221,7 +222,9 @@ export default function WineDetail({ user }) {
         </Popover>
 
         <Typography style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}>
-          <strong>Description</strong>: {wine.Description}
+          <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-">
+            <strong>Description</strong>: {wine.Description}
+          </p>
         </Typography>
       </div>
     </div>

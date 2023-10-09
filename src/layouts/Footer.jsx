@@ -15,7 +15,7 @@ export default function Footer() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-2/6 ">
       <footer className="bg-gray-900 text-white py-10 sticky-bottom-0 w-screen">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
           <div>
