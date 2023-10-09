@@ -260,7 +260,13 @@ export default function Nav({ user, handleLogOut }) {
 
   return (
     <div className="bg-white">
-      <Navbar className="max-w-full rounded-none py-0">
+      <div className="bg-black text-white font-bold text-center text-lg align-middle h-10 w-full left-0 z-50 flex items-center justify-center">
+        <h1>
+          FREE Shipping on orders of <span className="text-red-500">$100</span>{" "}
+          or more
+        </h1>
+      </div>
+      <Navbar className="max-w-full rounded-none py-0 ">
         {/* ==================== */}
         <div className="flex items-center bg-white">
           {/* Search Icon */}
@@ -302,15 +308,12 @@ export default function Nav({ user, handleLogOut }) {
             <NavList user={user} handleLogOut={handleLogOut} />
           </div>
         </div>
-
         {/* ==================== */}
-
         <Collapse open={isNavOpen} className="overflow-scroll w-1/3 ">
           <NavList user={user} handleLogOut={handleLogOut} />
         </Collapse>
         <DialogDefault open={dialogOpen} toggleDialog={toggleDialog} />
       </Navbar>
-
       <div
         className="flex justify-center border-b border-t"
         style={{ borderColor: "rgb(159, 0, 63)" }}
