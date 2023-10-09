@@ -9,6 +9,12 @@ export default function WineDetail({ wine, handleClose }) {
       handleClose();
     }
   };
+  const truncate = (str, num) => {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + "...";
+  };
 
   return (
     <div
@@ -25,7 +31,7 @@ export default function WineDetail({ wine, handleClose }) {
         className="font-black"
         style={{ fontFamily: "'HelpUsGiambattista', sans-serif" }}
       >
-        {wine.WineName}
+        {truncate(wine.WineName, 27)}
       </Typography>
       <Typography
         className="font-black text-green-500"

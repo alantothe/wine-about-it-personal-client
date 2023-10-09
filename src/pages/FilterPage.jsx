@@ -59,7 +59,7 @@ export default function FilterPage() {
   };
 
   return (
-    <div className="bg-gray-100 pb-10">
+    <div className="bg-gray-100 pb-10 mx-auto">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-10">
           <Typography
@@ -115,8 +115,6 @@ export default function FilterPage() {
           {wine.map((wine, index) => (
             <div className="flex flex-col">
               <WineDetail wine={wine} key={index} className="flex-grow" />
-              <div className="text-center mt-2">{wine.name}</div>
-              <div className="text-center mt-1">{wine.price}</div>
             </div>
           ))}
         </div>
