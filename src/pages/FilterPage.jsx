@@ -58,6 +58,13 @@ export default function FilterPage() {
     });
   };
 
+  const truncate = (str, num) => {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + " ...";
+  };
+
   return (
     <div className="bg-gray-100 pb-10 mx-auto">
       <div className="container mx-auto px-4">
