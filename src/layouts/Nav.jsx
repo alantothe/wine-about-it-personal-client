@@ -262,10 +262,12 @@ export default function Nav({ user, handleLogOut }) {
     <div className="bg-white">
       <Navbar className="max-w-full rounded-none py-0">
         {/* ==================== */}
-        <div className="flex" style={{ color: "rgb(159, 0, 63)" }}>
+        <div className="flex items-center bg-white">
+          {/* Search Icon */}
           <Typography
             onClick={() => toggleDialog()}
-            className="flex items-center w-1/6"
+            className="flex items-center justify-start flex-1"
+            style={{ color: "rgb(159, 0, 63)" }}
           >
             {createElement(MagnifyingGlassIcon, {
               className: "h-7 w-7",
@@ -273,33 +275,37 @@ export default function Nav({ user, handleLogOut }) {
             })}
           </Typography>
 
+          {/* Le Vino Logo */}
           <img
             onClick={() => navigate("/")}
-            className="mr-4 ml-2 flex items-center justify-center grow cursor-pointer py-1.5 h-32 w-60"
+            className="flex items-center justify-center grow cursor-pointer h-32 flex-1"
             src="https://res.cloudinary.com/dzjr3skhe/image/upload/v1696266588/610740ed726dc75a8e9e3126_1_iliqrj.svg"
             style={{ fontFamily: "Wine Date" }}
           />
 
-          {/* Favorites and shopping cart icons */}
-
-          <div className="hidden lg:flex items-center justify-center">
-            <NavList user={user} handleLogOut={handleLogOut} />
+          {/* Conditional Rendering for Nav Icons */}
+          <div className="flex flex-1 items-center justify-end lg:hidden">
+            <IconButton
+              size="sm"
+              variant="text"
+              onClick={toggleIsNavOpen}
+              className="my-auto leading-relaxed"
+              style={{ color: "rgb(159, 0, 63)" }}
+            >
+              <div className="w-1/3 leading-relaxed">
+                <Bars2Icon className="h-7 w-7 " />
+              </div>
+            </IconButton>
           </div>
 
-          {/* Responsive menu change (NavList > Bars2Icon) when Collapse is open (determined by useEffect above) */}
-          <IconButton
-            size="sm"
-            variant="text"
-            onClick={toggleIsNavOpen}
-            className="ml-auto mr-2 lg:hidden my-auto"
-            style={{ color: "rgb(159, 0, 63)" }}
-          >
-            <Bars2Icon className="h-7 w-7" />
-          </IconButton>
+          <div className="hidden lg:flex items-center justify-end sm:w-1/3 sm:justify-end flex-1">
+            <NavList user={user} handleLogOut={handleLogOut} />
+          </div>
         </div>
+
         {/* ==================== */}
 
-        <Collapse open={isNavOpen} className="overflow-scroll">
+        <Collapse open={isNavOpen} className="overflow-scroll w-1/3 ">
           <NavList user={user} handleLogOut={handleLogOut} />
         </Collapse>
         <DialogDefault open={dialogOpen} toggleDialog={toggleDialog} />

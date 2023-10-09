@@ -12,7 +12,7 @@ export default function WineDetail({ wine, handleClose }) {
 
   return (
     <div
-      className="flex flex-col text-center gap-y-2.5 mt-5 bg-white w-80"
+      className="flex flex-col text-center gap-y-2.5 mt-5 bg-white w-100"
       onClick={() => handleClick()}
     >
       <img

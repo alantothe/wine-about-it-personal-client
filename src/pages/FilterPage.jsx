@@ -60,10 +60,10 @@ export default function FilterPage() {
 
   return (
     <div className="bg-gray-100 pb-10">
-      <div className="flex ">
-        <div className="flex justify-start" style={{ width: "50vw" }}>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-10">
           <Typography
-            className="text-4xl font-black pl-14 flex pt-10"
+            className="text-2xl font-black xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl"
             style={{
               fontFamily: "'HelpUsGiambattista', sans-serif",
               color: "rgb(159, 0, 63)",
@@ -74,9 +74,9 @@ export default function FilterPage() {
               (productType === "rose" && `Rose Wines (${wine.length})`) ||
               (productType === "all" && `All Wines (${wine.length})`)}
           </Typography>
-        </div>
-        <div className="flex justify-end pr-14 pt-10" style={{ width: "50vw" }}>
-          <ButtonGroup>
+
+          {/* ButtonGroup */}
+          <div className="flex">
             <Button
               className="rounded-none"
               onClick={handleAToZ}
@@ -87,7 +87,6 @@ export default function FilterPage() {
             >
               A - Z
             </Button>
-
             <Button
               className="rounded-none"
               onClick={handleLeastToMost}
@@ -98,7 +97,6 @@ export default function FilterPage() {
             >
               $ - $$$
             </Button>
-
             <Button
               className="rounded-none"
               onClick={handleMostToLeast}
@@ -109,14 +107,19 @@ export default function FilterPage() {
             >
               $$$ - $
             </Button>
-          </ButtonGroup>
+          </div>
         </div>
-      </div>
 
-      <div className="wine-container flex flex-wrap justify-evenly gap-y-8">
-        {wine.map((wine, index) => (
-          <WineDetail wine={wine} key={index} />
-        ))}
+        {/* Wine Containers */}
+        <div className="wine-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+          {wine.map((wine, index) => (
+            <div className="flex flex-col">
+              <WineDetail wine={wine} key={index} className="flex-grow" />
+              <div className="text-center mt-2">{wine.name}</div>
+              <div className="text-center mt-1">{wine.price}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
