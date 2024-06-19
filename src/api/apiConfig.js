@@ -3,8 +3,8 @@ import axios from "axios";
 let apiUrl;
 
 const apiUrls = {
-  production: "https://wine-server-b39fe446bb22.herokuapp.com/api",
-  development: "https://wine-server-b39fe446bb22.herokuapp.com/api",
+  production: "https://wine-about-it-personal-server.onrender.com/api",
+  development: "https://wine-about-it-personal-server.onrender.com/api",
 };
 
 if (window.location.hostname === "localhost") {

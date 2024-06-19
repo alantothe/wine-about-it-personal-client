@@ -14,8 +14,7 @@ export default function SignIn() {
     e.preventDefault();
     // send post
     const user = await loginUser(formData);
-    //logic not done, need to figure out how
-    // update the user state before the navigate hits
+    console.log(user);
 
     navigate("/");
     window.location.reload();
